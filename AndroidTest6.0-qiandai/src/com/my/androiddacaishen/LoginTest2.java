@@ -12,11 +12,16 @@
 
 package com.my.androiddacaishen;
 
+import com.robotium.solo.By;
 import com.robotium.solo.Solo;
+import com.robotium.solo.WebElement;
 
 import android.content.Intent;
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 
 
@@ -57,7 +62,7 @@ public class LoginTest2 extends ActivityInstrumentationTestCase2{
 	}
 
 	public void testLogin() throws Exception {
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 //		solo.unlockScreen();
 //		solo.waitForActivity("MainActivity", 30000);
 //		assertTrue("无法启动启动类", solo.waitForActivity("MainActivity", 30000));
@@ -68,8 +73,15 @@ public class LoginTest2 extends ActivityInstrumentationTestCase2{
         solo.sleep(2000);
         solo.clickOnButton("登录");
         solo.sleep(2000);
+        
+//        WebElement s = solo.getWebElement(By.id("tv_swipe_payment"), 0);
+        solo.clickOnWebElement(solo.getWebElement(By.id("tv_swipe_payment"), 0));
+//        solo.clickOnText("刷卡收款");
+//        TextView shuaka = (TextView)solo.getView("tv_swipe_payment");
+//        shuaka.callOnClick();
 	}
 	
+
 //	@Override
 //    public MyActivity getActivity() {
 //        if (mActivity == null) {
@@ -83,4 +95,5 @@ public class LoginTest2 extends ActivityInstrumentationTestCase2{
 //        }
 //        return mActivity;
 //    }
+
 }
